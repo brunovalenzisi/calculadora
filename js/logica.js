@@ -18,9 +18,16 @@ function borrar() {if(pantalla.textContent.length == 1) {
 
 
 function resultado() {
-    pantalla.textContent = eval(pantalla.textContent)
+    pantalla.textContent = eval(pantalla.textContent);
+    fix();
 }
 function resetear() {
     pantalla.textContent = 0
     
+}
+
+function fix() {
+    if(pantalla.textContent.length >=12) {
+        pantalla.textContent= Number.parseFloat(pantalla.textContent).toExponential(5)
+    }
 }
